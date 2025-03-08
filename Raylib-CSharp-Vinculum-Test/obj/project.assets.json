@@ -114,11 +114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sun\\Documents\\Programing\\TestProjects\\Raylib-CSharp-Vinculum-Test\\Raylib-CSharp-Vinculum-Test.csproj",
+      "projectUniqueName": "C:\\Users\\Sun\\Documents\\GitHub\\Raylib-CSharp-Vinculum-Test\\Raylib-CSharp-Vinculum-Test\\Raylib-CSharp-Vinculum-Test.csproj",
       "projectName": "Raylib-CSharp-Vinculum-Test",
-      "projectPath": "C:\\Users\\Sun\\Documents\\Programing\\TestProjects\\Raylib-CSharp-Vinculum-Test\\Raylib-CSharp-Vinculum-Test.csproj",
+      "projectPath": "C:\\Users\\Sun\\Documents\\GitHub\\Raylib-CSharp-Vinculum-Test\\Raylib-CSharp-Vinculum-Test\\Raylib-CSharp-Vinculum-Test.csproj",
       "packagesPath": "C:\\Users\\Sun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sun\\Documents\\Programing\\TestProjects\\Raylib-CSharp-Vinculum-Test\\obj\\",
+      "outputPath": "C:\\Users\\Sun\\Documents\\GitHub\\Raylib-CSharp-Vinculum-Test\\Raylib-CSharp-Vinculum-Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sun\\AppData\\Roaming\\NuGet\\NuGet.Config"

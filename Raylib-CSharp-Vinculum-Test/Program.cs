@@ -77,8 +77,8 @@ public static class Program
     	    	    if (Raylib.IsKeyDown(KeyboardKey.KEY_S)) {player.Y+=3f;}
             		if (Raylib.IsKeyDown(KeyboardKey.KEY_D)) {player.X+=3f;}
             		if (Raylib.IsKeyDown(KeyboardKey.KEY_A)) {player.X-=3f;}
-					if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {playerRotation--;}
-					if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {playerRotation++;}
+					if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {playerRotation++;}
+					if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {playerRotation--;}
 
 					// Enemie Spawner
 					if (Raylib.IsKeyPressed(KeyboardKey.KEY_O)) 
