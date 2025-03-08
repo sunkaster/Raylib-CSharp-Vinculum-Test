@@ -23,13 +23,20 @@ public static class Program
 		Vector2 playerOrigin = new Vector2(player.width/2, player.height/2);
 		float playerRotation = 0f;
 
-		// Enemie initialization
-		Rectangle enemie1Rectangle = new Rectangle(400, 400, 50	,50);
-		Vector2 enemieSpawnParameterX = new Vector2(0, Raylib.GetScreenWidth());
-		Vector2 enemieSpawnParameterY = new Vector2(0, Raylib.GetScreenHeight());
-		Vector2 enemieSpawnPosition = new Vector2(random.Next((int)enemieSpawnParameterX.X, (int)enemieSpawnParameterX.Y), random.Next((int)enemieSpawnParameterY.X, (int)enemieSpawnParameterY.Y));
-		Enemie enemie1 = new Enemie(enemie1Rectangle, 0f, enemieSpawnPosition, enemieSpawnParameterX, enemieSpawnParameterY, 5, 0.5f);
-		
+		// Enemie1 initialization
+		Rectangle enemie1Rectangle = new Rectangle(400, 400, 100, 100);
+		Vector2 enemie1SpawnParameterX = new Vector2(0, Raylib.GetScreenWidth());
+		Vector2 enemie1SpawnParameterY = new Vector2(0, Raylib.GetScreenHeight());
+		Vector2 enemie1SpawnPosition = new Vector2(random.Next((int)enemie1SpawnParameterX.X, (int)enemie1SpawnParameterX.Y), random.Next((int)enemie1SpawnParameterY.X, (int)enemie1SpawnParameterY.Y));
+		Enemie enemie1 = new Enemie(enemie1Rectangle, 0f, enemie1SpawnPosition, enemie1SpawnParameterX, enemie1SpawnParameterY, 5, 0.5f);
+
+		// Enemie2 initialization
+		Rectangle enemie2Rectangle = new Rectangle(400, 400, 50, 50);
+		Vector2 enemie2SpawnParameterX = new Vector2(0, Raylib.GetScreenWidth());
+		Vector2 enemie2SpawnParameterY = new Vector2(0, Raylib.GetScreenHeight());
+		Vector2 enemie2SpawnPosition = new Vector2(random.Next((int)enemie2SpawnParameterX.X, (int)enemie2SpawnParameterX.Y), random.Next((int)enemie2SpawnParameterY.X, (int)enemie2SpawnParameterY.Y));
+		List<Enemie> enemie2List = new List<Enemie>();
+
 
 		// Loop until the window is closed
 		while (!Raylib.WindowShouldClose())
@@ -72,7 +79,7 @@ public static class Program
 					if (Raylib.IsKeyPressed(KeyboardKey.KEY_L)) 
 					{
 						currentScreen = GameScreen.TITLE; 
-						enemie1.Existance = false;
+						enemie1.existance = false;
 					}
 					
 					// Player Controlls
@@ -83,13 +90,26 @@ public static class Program
 					if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT)) {playerRotation++;}
 					if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT)) {playerRotation--;}
 
-					// Enemie Spawner
-					if (Raylib.IsKeyPressed(KeyboardKey.KEY_O)) 
+					// Enemie1 Spawner
+					if (Raylib.IsKeyDown(KeyboardKey.KEY_ONE)) 
 					{
-						enemie1.Existance = true;
+						enemie1.existance = true;
 					}
 
-					// Enemie Update
+					// Enemie2 spawner
+					if (Raylib.IsKeyPressed(KeyboardKey.KEY_TWO)) 
+					{
+						enemie2List.Add(new Enemie(enemie2Rectangle, 0f, new Vector2(random.Next((int)enemie2SpawnParameterX.X, (int)enemie2SpawnParameterX.Y), random.Next((int)enemie2SpawnParameterY.X, (int)enemie2SpawnParameterY.Y)), enemie2SpawnParameterX, enemie2SpawnParameterY, 3, 1f));
+					}
+
+					// Enemie2 Updater
+					for (int i = enemie2List.Count -1; i > -1; i--) 
+					{
+						enemie2List[i].HealthUpdate2();
+						if (enemie2List[i].existance == false) {Console.WriteLine(enemie2List.Remove(enemie2List[i]));}
+					}
+
+					// Enemie1 Updater
 					enemie1.HealthUpdate();
 					
 					break;
@@ -130,9 +150,15 @@ public static class Program
 					// Drawing player
 					Raylib.DrawRectanglePro(player, playerOrigin, playerRotation, Raylib.BLACK);
 
-					// Drawing enemies
-					if (enemie1.Existance == true) {Raylib.DrawRectangle((int)enemie1.enemiePosition.X, (int)enemie1.enemiePosition.Y, (int)enemie1.enemieRectangle.Width, (int)enemie1.enemieRectangle.height, Raylib.PURPLE); enemie1.enemieHasBeenReset = false;}
+					// Drawing enemie1
+					if (enemie1.existance == true) {Raylib.DrawRectangle((int)enemie1.enemiePosition.X, (int)enemie1.enemiePosition.Y, (int)enemie1.enemieRectangle.Width, (int)enemie1.enemieRectangle.height, Raylib.PURPLE); enemie1.enemieHasBeenReset = false;}
 					else if (enemie1.enemieHasBeenReset == false) {enemie1.EnemieReset();}
+
+					// Drawing enemie2
+					for (int i = 0; i < enemie2List.Count; i++)
+						{
+							Raylib.DrawRectangle((int)enemie2List[i].enemiePosition.X, (int)enemie2List[i].enemiePosition.Y, (int)enemie2List[i].enemieRectangle.Width, (int)enemie2List[i].enemieRectangle.Height, Raylib.RED);
+						}
 
 					break;
 				}

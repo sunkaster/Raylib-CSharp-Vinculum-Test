@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Raylib-CSharp-Vinculum-Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+396593dbc213e1bc84e59f48aa687aaee0205b33")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6bbe23f52147288115b01a9257fbedad97389a01")]
 [assembly: System.Reflection.AssemblyProductAttribute("Raylib-CSharp-Vinculum-Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Raylib-CSharp-Vinculum-Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

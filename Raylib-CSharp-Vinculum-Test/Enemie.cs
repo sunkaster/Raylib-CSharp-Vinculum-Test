@@ -8,10 +8,11 @@ namespace Raylib_CSharp_Vinculum_Test;
 public class Enemie
 {
     private int framesCounter = 0;
+
     Random random = new Random();
  
     // Initializing enemie variables
-	public bool Existance = false;
+	public bool existance;
     private int enemieHealth;
     private int enemieMaxHealth;
     public Rectangle enemieRectangle;
@@ -22,6 +23,7 @@ public class Enemie
     public Vector2 enemiePositionParameterX;
     public Vector2 enemiePositionParameterY;  
     public bool enemieHasBeenReset;
+    public bool isLoaded;
     
     // Enemie constructor
     public Enemie (Rectangle enemieRectangle, float enemieRotation, Vector2 enemiePosition, Vector2 EnemiePositionParameterX, Vector2 EnemiePositionParameterY, int enemieHealth, float enemieSpeed) 
@@ -39,8 +41,18 @@ public class Enemie
 
     public int HealthUpdate() 
     {
-        if (framesCounter > 60 && enemieHealth > 0 && Existance == true) {enemieHealth--; framesCounter = 0;}
-        if (enemieHealth == 0) {Existance = false; enemieHealth = 5;}
+        if (framesCounter > 60 && enemieHealth > 0 && existance == true) {enemieHealth--; framesCounter = 0;}
+        if (enemieHealth == 0) {existance = false; enemieHealth = 5;}
+
+        framesCounter++;
+
+        return 0;
+    }
+    public int HealthUpdate2()
+    {
+        if (enemieHealth > 0) {existance = true;}
+        if (framesCounter > 60 && enemieHealth > 0) {enemieHealth--; framesCounter = 0;}
+        if (enemieHealth == 0) {existance = false;}
 
         framesCounter++;
 
@@ -48,7 +60,7 @@ public class Enemie
     }
     public int Spawner() 
     {
-        Existance = true;
+        existance = true;
 
         return 0;
     }
