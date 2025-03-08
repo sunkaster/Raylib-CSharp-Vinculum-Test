@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "YRJetmNCz/U=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Sun\\Documents\\Programing\\TestProjects\\Raylib-CSharp-Vinculum-Test\\Raylib-CSharp-Vinculum-Test.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sun\\.nuget\\packages\\communitytoolkit.highperformance\\8.1.0\\communitytoolkit.highperformance.8.1.0.nupkg.sha512",
+    "C:\\Users\\Sun\\.nuget\\packages\\raylib-csharp-vinculum\\5.0.1\\raylib-csharp-vinculum.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

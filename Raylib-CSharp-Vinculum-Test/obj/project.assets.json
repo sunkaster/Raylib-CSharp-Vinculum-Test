@@ -1,0 +1,179 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "CommunityToolkit.HighPerformance/8.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Raylib-CSharp-Vinculum/5.0.1": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.HighPerformance": "8.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Raylib-CSharp-Vinculum.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Raylib-CSharp-Vinculum.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libraylib.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/win-x64/native/raylib.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/raylib.exp": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/raylib.lib": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/raylib.pdb": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CommunityToolkit.HighPerformance/8.1.0": {
+      "sha512": "kgDi65k02hrgnHy3N0xENecsr0spW13RdIA1tipovi9t16gKziI7uZIu3qkxz0GctCHNM4hfeqXYg//6wHJ6Kw==",
+      "type": "package",
+      "path": "communitytoolkit.highperformance/8.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "communitytoolkit.highperformance.8.1.0.nupkg.sha512",
+        "communitytoolkit.highperformance.nuspec",
+        "lib/net6.0/CommunityToolkit.HighPerformance.dll",
+        "lib/net6.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/net6.0/CommunityToolkit.HighPerformance.xml",
+        "lib/net7.0/CommunityToolkit.HighPerformance.dll",
+        "lib/net7.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/net7.0/CommunityToolkit.HighPerformance.xml",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.dll",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.xml",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.dll",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.pdb",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.xml"
+      ]
+    },
+    "Raylib-CSharp-Vinculum/5.0.1": {
+      "sha512": "g21BSSFWohdtUohpo3PW7ZHt7EGZ1+qssg3uWoHy5cnJtsPNNoMjzeyX+xOGM6HEi3JhlzPZFJ2+qojuFPXP5A==",
+      "type": "package",
+      "path": "raylib-csharp-vinculum/5.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.1/Raylib-CSharp-Vinculum.dll",
+        "lib/netstandard2.1/Raylib-CSharp-Vinculum.xml",
+        "raylib-csharp-vinculum.5.0.1.nupkg.sha512",
+        "raylib-csharp-vinculum.nuspec",
+        "raylib-csharp-vinculum_logo_256x256.png",
+        "runtimes/linux-x64/native/libraylib.so",
+        "runtimes/win-x64/native/raylib.dll",
+        "runtimes/win-x64/native/raylib.exp",
+        "runtimes/win-x64/native/raylib.lib",
+        "runtimes/win-x64/native/raylib.pdb"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "Raylib-CSharp-Vinculum >= 5.0.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Sun\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Sun\\Documents\\Programing\\TestProjects\\Raylib-CSharp-Vinculum-Test\\Raylib-CSharp-Vinculum-Test.csproj",
+      "projectName": "Raylib-CSharp-Vinculum-Test",
+      "projectPath": "C:\\Users\\Sun\\Documents\\Programing\\TestProjects\\Raylib-CSharp-Vinculum-Test\\Raylib-CSharp-Vinculum-Test.csproj",
+      "packagesPath": "C:\\Users\\Sun\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sun\\Documents\\Programing\\TestProjects\\Raylib-CSharp-Vinculum-Test\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Sun\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "dependencies": {
+          "Raylib-CSharp-Vinculum": {
+            "target": "Package",
+            "version": "[5.0.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
