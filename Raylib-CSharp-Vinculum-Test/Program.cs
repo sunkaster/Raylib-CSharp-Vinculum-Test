@@ -11,7 +11,7 @@ public static class Program
 	public static void Main(string[] args)
 	{
 		// Initialize the window with the specified width, height, and title. Aswell as other initialization stuff
-		Raylib.InitWindow(Raylib.GetScreenWidth(), Raylib.GetScreenHeight(), "Hello World , Raylib-CSharp-Vinculum");
+		Raylib.InitWindow(Raylib.GetScreenWidth(), Raylib.GetScreenHeight(), "Hello World");
 		Raylib.SetTargetFPS(60);
 		int framesCounter = 0;
 		GameScreen currentScreen = GameScreen.LOGO;
