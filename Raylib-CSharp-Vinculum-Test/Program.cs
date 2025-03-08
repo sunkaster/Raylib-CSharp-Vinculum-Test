@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using System.Reflection.Metadata;
 using Raylib_CSharp_Vinculum_Test;
 using ZeroElectric.Vinculum;
 
@@ -15,7 +16,7 @@ public static class Program
 		Raylib.SetTargetFPS(60);
 		int framesCounter = 0;
 		GameScreen currentScreen = GameScreen.LOGO;
-		var random = new Random();
+		Random random = new Random();
 
 		// Player Initialization
         Rectangle player = new Rectangle(Raylib.GetScreenWidth()/2, Raylib.GetScreenHeight()/2, 50f, 50f);
@@ -24,8 +25,10 @@ public static class Program
 
 		// Enemie initialization
 		Rectangle enemie1Rectangle = new Rectangle(400, 400, 50	,50);
-		Vector2 enemiePosition = new Vector2(random.Next(0, Raylib.GetScreenWidth()), random.Next(0, Raylib.GetScreenHeight()));
-		Enemie enemie1 = new Enemie(enemie1Rectangle, 0f, enemiePosition, 5, 0.5f);
+		Vector2 enemieSpawnParameterX = new Vector2(0, Raylib.GetScreenWidth());
+		Vector2 enemieSpawnParameterY = new Vector2(0, Raylib.GetScreenHeight());
+		Vector2 enemieSpawnPosition = new Vector2(random.Next((int)enemieSpawnParameterX.X, (int)enemieSpawnParameterX.Y), random.Next((int)enemieSpawnParameterY.X, (int)enemieSpawnParameterY.Y));
+		Enemie enemie1 = new Enemie(enemie1Rectangle, 0f, enemieSpawnPosition, enemieSpawnParameterX, enemieSpawnParameterY, 5, 0.5f);
 		
 
 		// Loop until the window is closed
@@ -128,7 +131,8 @@ public static class Program
 					Raylib.DrawRectanglePro(player, playerOrigin, playerRotation, Raylib.BLACK);
 
 					// Drawing enemies
-					if (enemie1.Existance == true) {Raylib.DrawRectangle((int)enemie1.enemiePosition.X, (int)enemie1.enemiePosition.Y, (int)enemie1.enemieRectangle.Width, (int)enemie1.enemieRectangle.height, Raylib.PURPLE);}
+					if (enemie1.Existance == true) {Raylib.DrawRectangle((int)enemie1.enemiePosition.X, (int)enemie1.enemiePosition.Y, (int)enemie1.enemieRectangle.Width, (int)enemie1.enemieRectangle.height, Raylib.PURPLE); enemie1.enemieHasBeenReset = false;}
+					else if (enemie1.enemieHasBeenReset == false) {enemie1.EnemieReset();}
 
 					break;
 				}
