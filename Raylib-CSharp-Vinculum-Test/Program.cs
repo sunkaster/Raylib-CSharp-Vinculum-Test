@@ -99,14 +99,18 @@ public static class Program
 					// Enemie2 spawner
 					if (Raylib.IsKeyPressed(KeyboardKey.KEY_TWO)) 
 					{
-						enemie2List.Add(new Enemie(enemie2Rectangle, 0f, new Vector2(random.Next((int)enemie2SpawnParameterX.X, (int)enemie2SpawnParameterX.Y), random.Next((int)enemie2SpawnParameterY.X, (int)enemie2SpawnParameterY.Y)), enemie2SpawnParameterX, enemie2SpawnParameterY, 3, 1f));
+						enemie2List.Add(new Enemie(enemie2Rectangle, 0f, new Vector2(random.Next((int)enemie2SpawnParameterX.X, (int)enemie2SpawnParameterX.Y), random.Next((int)enemie2SpawnParameterY.X, (int)enemie2SpawnParameterY.Y)), enemie2SpawnParameterX, enemie2SpawnParameterY, 15, 1f));
 					}
 
-					// Enemie2 Updater
+					// Enemie2 updater
 					for (int i = enemie2List.Count -1; i > -1; i--) 
 					{
+						// Enemie2 movement
+						enemie2List[i].EnemieMovement(new Vector2(player.X, player.Y));
+
+						// Enemie2 Health Updating
 						enemie2List[i].HealthUpdate2();
-						if (enemie2List[i].existance == false) {Console.WriteLine(enemie2List.Remove(enemie2List[i]));}
+						if (enemie2List[i].existance == false) {enemie2List.Remove(enemie2List[i]);}
 					}
 
 					// Enemie1 Updater
@@ -129,12 +133,17 @@ public static class Program
 			{
 				case GameScreen.LOGO: 
 				{
+					// Draw FPS
+					Raylib.DrawText(Raylib.GetFPS().ToString(), 1f, 1f, 20f, Raylib.BLACK);
 					// TODO: Draw LOGO screen here!
 					Raylib.DrawText("This is the logo screen which displays on bootup", 10, 80, 70f, Raylib.BLACK);
 					break;
 				}
 				case GameScreen.TITLE: 
 				{
+					// Draw FPS
+					Raylib.DrawText(Raylib.GetFPS().ToString(), 1f, 1f, 20f, Raylib.BLACK);
+
 					// TODO: Draw TITLE screen here!
 					Raylib.DrawText("TITLE SCREEN", 10, 10, 100f, Raylib.BLACK);
 					Raylib.DrawText("Press Enter to Play", 10, 130, 40f, Raylib.MAROON);
@@ -143,8 +152,10 @@ public static class Program
 				}
 				case GameScreen.GAMEPLAY: 
 				{
-					// TODO: Draw GAMEPLAY screen here!
+					// Draw FPS
+					Raylib.DrawText(Raylib.GetFPS().ToString(), 1f, 1f, 20f, Raylib.BLACK);
 
+					// TODO: Draw GAMEPLAY screen here!
 					Raylib.DrawText("Press L to return to the TITLE screen", 10, 50, 40f, Raylib.MAROON);
 
 					// Drawing player
@@ -159,6 +170,9 @@ public static class Program
 						{
 							Raylib.DrawRectangle((int)enemie2List[i].enemiePosition.X, (int)enemie2List[i].enemiePosition.Y, (int)enemie2List[i].enemieRectangle.Width, (int)enemie2List[i].enemieRectangle.Height, Raylib.RED);
 						}
+
+					// Drawing center circle for testing
+					Raylib.DrawCircle(Raylib.GetScreenWidth()/2, Raylib.GetScreenHeight()/2, 10f, Raylib.ORANGE);
 
 					break;
 				}

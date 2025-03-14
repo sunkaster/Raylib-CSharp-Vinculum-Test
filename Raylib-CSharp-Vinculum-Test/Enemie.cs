@@ -74,4 +74,13 @@ public class Enemie
 
         return enemieHasBeenReset;
     }
+    public Vector2 EnemieMovement(Vector2 enemieTarget) 
+    {
+        if (enemiePosition.X > enemieTarget.X) {enemiePosition.X--;}
+        if (enemiePosition.X < enemieTarget.X) {enemiePosition.X++;}
+        if (enemiePosition.Y > enemieTarget.Y) {enemiePosition.Y--;}
+        if (enemiePosition.Y < enemieTarget.Y) {enemiePosition.Y++;}
+
+        return enemiePosition;
+    }
 }
