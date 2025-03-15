@@ -1,6 +1,6 @@
 # Raylib-CSharp-Vinculum-Test
 A test project using a c# binding for the Raylib graphical library called CSharp-Vinculum.
-- Uses Dotnet 9.0 which can be found here:https://dotnet.microsoft.com/en-us/download
+- Uses Dotnet 9.0 which can be found here: https://dotnet.microsoft.com/en-us/download
 - Link to Raylib: https://github.com/raysan5/raylib 
 - Link to Raylib-CSharp-Vinculum: https://github.com/ZeroElectric/Raylib-CSharp-Vinculum
 
